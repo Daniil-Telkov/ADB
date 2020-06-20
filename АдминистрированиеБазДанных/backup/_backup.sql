@@ -1,0 +1,19 @@
+
+SELECT *
+FROM DBUsers
+
+BACKUP DATABASE DB TO DISK = 'D:\DB\backup.bak'
+
+DROP TABLE DBUsers
+
+SELECT *
+FROM DBUsers
+
+USE master 
+GO 
+RESTORE DATABASE DB FROM DISK = 'D:\DB\backup.bak'
+WITH REPLACE
+
+SELECT *
+FROM DBUsers
+
